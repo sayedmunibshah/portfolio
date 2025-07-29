@@ -10,6 +10,9 @@
     --highlight: #ffc107;
     --success: #4caf50;
     --danger: #f44336;
+    --blob-first: #00bcd4;
+    --blob-sec: #7c4dff;
+    --blob-third: #ff4081;
 
     /* Shadows */
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -211,7 +214,7 @@ body {
 }
 
 .blob1 {
-    background: #00bcd4;
+    background: var(--blob-first);
     width: 450px;
     height: 450px;
     top: -150px;
@@ -219,7 +222,7 @@ body {
 }
 
 .blob2 {
-    background: #7c4dff;
+    background: var(--blob-sec);
     width: 350px;
     height: 350px;
     bottom: 150px;
@@ -236,7 +239,7 @@ body {
 }
 
 .blob4 {
-    background: #ff4081;
+    background: var(--blob-third);
     width: 400px;
     height: 400px;
     top: 60%;
@@ -298,22 +301,27 @@ body {
 }
 
 .gradient-name {
-    background: linear-gradient(270deg, var(--main-color), var(--accent-color), var(--danger), var(--success), var(--highlight));
+    background: linear-gradient(270deg, var(--main-color), var(--blob-first), var(--blob-sec), var(--blob-third), var(--main-color));
+    background-size: 300% auto;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
     font-weight: 800;
-    animation: hueRotate 5s linear infinite;
+    animation: flowGradient 6s linear infinite;
 }
 
-@keyframes hueRotate {
+@keyframes flowGradient {
     0% {
-        filter: hue-rotate(0deg);
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 100% center;
     }
 
     100% {
-        filter: hue-rotate(360deg);
+        background-position: 0% center;
     }
 }
 
