@@ -117,6 +117,21 @@ document
       btn.innerHTML = "<span>Send Message</span>";
     }
   });
+
+// Open the fullscreen overlay
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+// Close the fullscreen overlay
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+
+
+
+
 function showAlert(msg, type) {
   const div = document.getElementById("formAlert");
   div.innerHTML = msg;

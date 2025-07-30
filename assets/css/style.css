@@ -19,8 +19,8 @@
     --shadow-lg: 0 15px 30px rgba(0, 0, 0, 0.3);
 
     /* Typography */
-    --font-main: 'Poppins', sans-serif;
-    --font-size-base: 16px;
+    --font-main: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-seri --font-size-base: 16px;
     --heading-color: var(--main-color);
     --line-height: 1.6;
 
@@ -42,7 +42,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font-main);
+    font-family: var(--font-body);
 }
 
 body {
@@ -50,6 +50,15 @@ body {
     color: var(--text);
     overflow-x: hidden;
     scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-main);
 }
 
 /* Sections */
@@ -76,6 +85,40 @@ body {
 }
 
 /* Navbar */
+/* 
+.glass-navbar {
+    background: var(--bg-blur);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1000;
+}
+
+.nav-link {
+    position: relative;
+    color: var(--text);
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background: var(--main-color);
+    transition: all 0.3s ease;
+    scale: 0;
+}
+
+.nav-link:hover::after {
+    scale: 1;
+}
+
+.nav-link:hover {
+    color: var(--main-color);
+} */
+
 .glass-navbar {
     background: var(--bg-blur);
     backdrop-filter: blur(4px);
@@ -108,6 +151,69 @@ body {
 .nav-link:hover {
     color: var(--main-color);
 }
+
+/* Fullscreen Overlay Navbar */
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+@media screen and (max-width: 991.98px) {
+
+    /* Bootstrap's lg breakpoint */
+    #navbarNav {
+        display: none !important;
+    }
+}
+
 
 /* Buttons */
 .btn-gradient {
@@ -201,61 +307,6 @@ body {
     background: var(--main-color);
     color: #fff;
     box-shadow: 0 0 18px var(--main-color), 0 0 24px var(--main-color);
-}
-
-/* Blobs */
-.background-blobs .blob {
-    position: fixed;
-    border-radius: 50%;
-    opacity: 0.2;
-    filter: blur(80px);
-    animation: blobMove 8s infinite;
-    z-index: -2;
-}
-
-.blob1 {
-    background: var(--blob-first);
-    width: 450px;
-    height: 450px;
-    top: -150px;
-    left: -150px;
-}
-
-.blob2 {
-    background: var(--blob-sec);
-    width: 350px;
-    height: 350px;
-    bottom: 150px;
-    right: -100px;
-}
-
-.blob3 {
-    background: var(--main-color);
-    width: 300px;
-    height: 300px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.blob4 {
-    background: var(--blob-third);
-    width: 400px;
-    height: 400px;
-    top: 60%;
-    right: 60%;
-}
-
-@keyframes blobMove {
-
-    0%,
-    100% {
-        transform: translate(0, 0) scale(0.8);
-    }
-
-    50% {
-        transform: translate(60px, -60px) scale(1.2);
-    }
 }
 
 /* Reveal Animation */
