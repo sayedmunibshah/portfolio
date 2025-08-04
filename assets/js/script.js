@@ -6,7 +6,7 @@ particlesJS("particles-js", {
       value: ["#ff4081", "#00bcd4", "#7c4dff", "#1e90ff", "#ff9800", "#4caf50", "#f44336", "#9c27b0", "#2196f3", "#ffeb3b", "#673ab7", "#3f51b5", "#009688", "#cddc39", "#795548", "#607d8b", "#e91e63", "#8bc34a", "#ffc107", "#9e9e9e", "#ff5722", "#00bcd4", "#673ab7", "#3f51b5"],
       random: true
     },
-    opacity: { value: 1, random: true },
+    opacity: { value: 5, random: true },
     move: { enable: true, speed: 2 },
     line_linked: {
       enable: true,
@@ -127,10 +127,6 @@ function openNav() {
 function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
-
-
-
-
 
 function showAlert(msg, type) {
   const div = document.getElementById("formAlert");
